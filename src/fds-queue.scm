@@ -12,7 +12,7 @@
 	(define (fds-queue-car q)
 	  (cond
 	   ((fds-queue-empty? q) (error 'empty))
-	   (else (cadr q))))
+	   (else (caadr q))))
  
     (define (fds-queue-check size front rear)
 		(cons size (cond
