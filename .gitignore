@@ -1,0 +1,10 @@
+src/fds-queue.import.scm
+src/fds-queue.import.so
+src/fds-queue.link
+src/fds-queue.so
+src/fds-queue.static.o
+src/fds.build.sh
+src/fds.install.sh
+src/queue.link
+src/queue.so
+src/queue.static.o

@@ -1,0 +1,5 @@
+
+((author "Massimo Nocentini")
+ (synopsis "Functional data structures.")
+ (license "MIT")
+ (components (extension fds-queue)))
