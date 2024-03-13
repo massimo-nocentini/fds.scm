@@ -16,7 +16,7 @@
             (⊦= '(3 (a) c b) r)
             (⊦= '(4 (a) d c b) t)))
 
-    ((test-manipulation _)
+    ((test-cons-cdr _)
         (letqueue ((q '()))
             (⊦= '(0 ()) q)
 
@@ -39,9 +39,14 @@
             (set! q (fds-queue-cdr q))
             (⊦= '(1 (c)) q)
             (⊦= 'c (fds-queue-car q))
-            
+
             (set! q (fds-queue-cdr q))
             (⊦= '(0 ()) q)))
+
+    ((test-empty-car _)
+        (letqueue ((q '()))
+            (⊦⧳ ((exn)) (fds-queue-car q))
+            (⊦⧳ ((exn)) (fds-queue-cdr q))))
 )
 
 (unittest/✓ queue-suite)
