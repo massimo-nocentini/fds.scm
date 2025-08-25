@@ -1,5 +1,7 @@
 
-(module fds-queue *
+(module fds * )
+
+(module (fds queue) *
 
 	(import scheme (chicken base) aux)
 
