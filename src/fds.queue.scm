@@ -1,6 +1,4 @@
 
-(module fds * )
-
 (module (fds queue) *
 
 	(import scheme (chicken base) aux)
@@ -33,6 +31,15 @@
     (define (fds-queue-cons x q)
         (letqueuefront&rear (((size front rear) q))
 			(fds-queue-check (add1 size) front (cons x rear))))
+
+	(define (fds-queue->list q)
+		(letqueuefront&rear (((size front rear) q))
+			(append front (reverse rear))))
+
+	(define (list->fds-queue lst)
+		(let loop ((lst lst) (q fds-queue-empty))
+			(if (null? lst) q
+				(loop (cdr lst) (fds-queue-cons (car lst) q)))))
 
 	(define-syntax letqueue
 	  (syntax-rules ()
