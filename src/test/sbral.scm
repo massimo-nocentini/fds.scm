@@ -19,7 +19,7 @@
          (set! q (cons/sbral 'c q))
          (⊦= '((3 c (b) (a))) q)
          (⊦= 'c (car/sbral q))
-         (⊦= '((1 (b)) (1 (a))) (cdr/sbral q))
+         (⊦= '((1 b) (1 a)) (cdr/sbral q))
 
          (set! q (cons/sbral 'd q))
          (⊦= '((1 d) (3 c (b) (a))) q)
@@ -34,12 +34,12 @@
          (set! q (cons/sbral 'f q))
          (⊦= '((3 f (e) (d)) (3 c (b) (a))) q)
          (⊦= 'f (car/sbral q))
-         (⊦= '((1 (e)) (1 (d)) (3 c (b) (a))) (cdr/sbral q))
+         (⊦= '((1 e) (1 d) (3 c (b) (a))) (cdr/sbral q))
 
          (set! q (cons/sbral 'g q))
          (⊦= '((7 g (f (e) (d)) (c (b) (a)))) q)
          (⊦= 'g (car/sbral q))
-         (⊦= '((3 (f (e) (d))) (3 (c (b) (a)))) (cdr/sbral q))))
+         (⊦= '((3 f (e) (d)) (3 c (b) (a))) (cdr/sbral q))))
 
   ((test-ref _)
 
@@ -53,18 +53,27 @@
          (⊦= 'g (ref/sbral 6 q))
          ))
 
+  ((test-list->sbral _)
+
+   (let* ((l '(a b c d e f g))
+          (q (list->sbral l)))         
+     (⊦= '((7 a (b (c) (d)) (e (f) (g)))) q)))
+
+
   ((test-length _)
 
-   (let1 (q (list->sbral '(a b c d e f g)))         
-         (⊦= '((7 a (b (c) (d)) (e (f) (g)))) q)
-         (⊦= 7 (length/sbral q))))
+   (let* ((l '(a b c d e f g))
+          (q (list->sbral l)))              
+     (⊦= (length l) (length/sbral q))))
 
   ((test-update _)
    (let1 (q (list->sbral '(a b c d e f g)))         
          (⊦= '((7 a (b (c) (d)) (e (f) (g)))) q)
          (⊦= '((7 a (b (c) (d)) (hello (f) (g)))) (update/sbral 4 'hello q))))
 
-
+  ((test-identity _)
+   (let1 (l '(a b c d e f g))
+         (⊦= l (sbral->list (list->sbral l)))))
 
   )
 
