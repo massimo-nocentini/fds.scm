@@ -18,3 +18,4 @@ src/fds.queue.link
 src/fds.queue.so
 src/fds.queue.static.o
 test/testsuite-queue-suite.html
+src/test/testsuite-queue-suite.html
