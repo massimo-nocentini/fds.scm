@@ -19,3 +19,8 @@ src/fds.queue.so
 src/fds.queue.static.o
 test/testsuite-queue-suite.html
 src/test/testsuite-queue-suite.html
+src/fds.sbral.static.o
+src/fds.sbral.so
+src/fds.sbral.link
+src/fds.sbral.import.scm
+src/fds.sbral.import.so

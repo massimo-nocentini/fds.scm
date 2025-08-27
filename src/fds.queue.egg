@@ -2,4 +2,6 @@
 ((author "Massimo Nocentini")
  (synopsis "Functional data structures.")
  (license "MIT")
- (components (extension fds.queue)))
+ (components 
+  (extension fds.queue) 
+  (extension fds.sbral)))
