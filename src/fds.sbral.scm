@@ -55,11 +55,6 @@
                   ((< i size) (sbral-lookup size i tree))
                   (else (ref/sbral (- i size) (cdr sbral))))))
 
-		(define (list->sbral lst)
-			(define (helper lst acc)
-				(if (null? lst)
-						acc
-						(helper (cdr lst) (cons/sbral (car lst) acc))))
-			(helper (reverse lst) empty/sbral))
+  (define (list->sbral lst) (foldr cons/sbral empty/sbral lst))
 
   )

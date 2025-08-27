@@ -53,13 +53,14 @@
   ((test-ref _)
 
    (let1 (q (list->sbral '(a b c d e f g)))
+         (⊦= '((7 a (b (c) (d)) (e (f) (g)))) q)
          (⊦= 'a (ref/sbral 0 q))
-          (⊦= 'b (ref/sbral 1 q))
-          (⊦= 'c (ref/sbral 2 q))
-          (⊦= 'd (ref/sbral 3 q))
-          (⊦= 'e (ref/sbral 4 q))
-          (⊦= 'f (ref/sbral 5 q))
-          (⊦= 'g (ref/sbral 6 q))
+         (⊦= 'b (ref/sbral 1 q))
+         (⊦= 'c (ref/sbral 2 q))
+         (⊦= 'd (ref/sbral 3 q))
+         (⊦= 'e (ref/sbral 4 q))
+         (⊦= 'f (ref/sbral 5 q))
+         (⊦= 'g (ref/sbral 6 q))
          ))
 
 
