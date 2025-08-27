@@ -1,7 +1,7 @@
 
 
 test:
-	cd ../test && csi -s queue.scm
+	cd test && csi -s queue.scm
 
 install:
 	chicken-install -sudo
