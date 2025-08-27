@@ -17,3 +17,4 @@ src/fds.queue.install.sh
 src/fds.queue.link
 src/fds.queue.so
 src/fds.queue.static.o
+test/testsuite-queue-suite.html
