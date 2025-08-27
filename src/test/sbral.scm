@@ -39,21 +39,11 @@
          (set! q (cons/sbral 'g q))
          (⊦= '((7 g (f (e) (d)) (c (b) (a)))) q)
          (⊦= 'g (car/sbral q))
-         (⊦= '((3 (f (e) (d))) (3 (c (b) (a)))) (cdr/sbral q))
-
-         (⊦= 'g (ref/sbral 0 q))
-         (⊦= 'f (ref/sbral 1 q))
-         (⊦= 'e (ref/sbral 2 q))
-         (⊦= 'd (ref/sbral 3 q))
-         (⊦= 'c (ref/sbral 4 q))
-         (⊦= 'b (ref/sbral 5 q))
-         (⊦= 'a (ref/sbral 6 q))
-         ))
+         (⊦= '((3 (f (e) (d))) (3 (c (b) (a)))) (cdr/sbral q))))
 
   ((test-ref _)
 
    (let1 (q (list->sbral '(a b c d e f g)))
-         (⊦= '((7 a (b (c) (d)) (e (f) (g)))) q)
          (⊦= 'a (ref/sbral 0 q))
          (⊦= 'b (ref/sbral 1 q))
          (⊦= 'c (ref/sbral 2 q))
@@ -62,6 +52,18 @@
          (⊦= 'f (ref/sbral 5 q))
          (⊦= 'g (ref/sbral 6 q))
          ))
+
+  ((test-length _)
+
+   (let1 (q (list->sbral '(a b c d e f g)))         
+         (⊦= '((7 a (b (c) (d)) (e (f) (g)))) q)
+         (⊦= 7 (length/sbral q))))
+
+  ((test-update _)
+   (let1 (q (list->sbral '(a b c d e f g)))         
+         (⊦= '((7 a (b (c) (d)) (e (f) (g)))) q)
+         (⊦= '((7 a (b (c) (d)) (hello (f) (g)))) (update/sbral 4 'hello q))))
+
 
 
   )
