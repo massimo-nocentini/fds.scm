@@ -2,7 +2,7 @@
 
 (module fds *
 
-	(import scheme (chicken base) aux)
+  (import scheme (chicken base) aux)
 
-    
-)
+
+  )

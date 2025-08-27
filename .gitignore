@@ -27,3 +27,4 @@ src/fds.sbral.import.so
 src/fds.link
 src/fds.so
 src/fds.static.o
+src/test/testsuite-sbral-suite.html
