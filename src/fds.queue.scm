@@ -38,14 +38,12 @@
 
 	(define (list->fds-queue lst)
 		(let loop ((lst lst) (q fds-queue-empty))
-			(if (null? lst) q
-				(loop (cdr lst) (fds-queue-cons (car lst) q)))))
+			(cond 
+			 ((null? lst) q)
+			 (else (loop (cdr lst) (fds-queue-cons (car lst) q))))))
 
 	(define-syntax letqueue
 	  (syntax-rules ()
-	  	((_ ((q expr) ...) body ...)
-		 (let ((q fds-queue-empty) ...)
-		 	(for-each (lambda (x) (set! q (fds-queue-cons x q))) expr) ...
-			body ...))))
+	  	((_ ((q expr) ...) body ...) (let ((q (list->fds-queue expr)) ...) body ...))))
 
 )
