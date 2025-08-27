@@ -3,5 +3,5 @@
  (synopsis "Functional data structures.")
  (license "MIT")
  (components 
-  (extension fds.queue) 
+  (extension fds.queue)
   (extension fds.sbral)))
