@@ -8,7 +8,6 @@ install:
 	chicken-install -sudo
 
 format:
-	scheme-indent -T 2 < fds.scm > fds.scm.tmp && mv fds.scm.tmp fds.scm
 	scheme-indent -T 2 < fds.queue.scm > fds.queue.scm.tmp && mv fds.queue.scm.tmp fds.queue.scm
 	scheme-indent -T 2 < fds.sbral.scm > fds.sbral.scm.tmp && mv fds.sbral.scm.tmp fds.sbral.scm
 	scheme-indent -T 2 < test/queue.scm > test/queue.scm.tmp && mv test/queue.scm.tmp test/queue.scm

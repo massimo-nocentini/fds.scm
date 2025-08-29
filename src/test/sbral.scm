@@ -1,5 +1,5 @@
 
-(import unittest aux (fds sbral) (chicken base) srfi-1)
+(import (aux unittest) (aux base) (fds sbral) (chicken base) srfi-1)
 
 (define-suite sbral-suite
 

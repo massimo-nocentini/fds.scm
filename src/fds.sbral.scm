@@ -1,7 +1,7 @@
 
 (module (fds sbral) *
 
-  (import scheme (chicken base) (chicken fixnum) aux)
+  (import scheme (chicken base) (chicken fixnum) (aux base))
 
   (define empty/sbral '())
 

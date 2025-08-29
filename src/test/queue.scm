@@ -1,5 +1,5 @@
 
-(import unittest aux (fds queue))
+(import (aux unittest) (aux base) (fds queue))
 
 (define-suite queue-suite
 

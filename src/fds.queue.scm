@@ -1,7 +1,7 @@
 
 (module (fds queue) *
 
-  (import scheme (chicken base) aux)
+  (import scheme (chicken base) (aux base))
 
   (define fds-queue-empty (cons 0 (cons '() '())))
 
